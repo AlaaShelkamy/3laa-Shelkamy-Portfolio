@@ -1,31 +1,48 @@
-# 3laa Shelkamy | Portfolio V3
+# 3laa Shelkamy — Portfolio V4
 
-Bilingual, responsive video editing and motion design portfolio (Arabic / English).
+A bilingual (English / Arabic) static portfolio built for GitHub Pages. This release builds on V3; it retains the hero, existing visual identity, typography, contact links and 4 green signature labels.
 
-## Deploy to GitHub Pages
-1. Open the ZIP and upload its **contents** (`index.html`, `assets/`, `README.md`) to the repository root, not the containing folder.
-2. Commit to the `main` branch; keep GitHub Pages deployment pointing to `main` / `(root)`.
-3. Open your published URL and use a hard refresh if the previous version is still cached.
+## What changed in V4
 
-## Features
-- English: IBM Plex Sans (Google Fonts) for the interface, Press Start 2P (Google Fonts) for four green neon labels.
-- Arabic: your supplied Palestine font, packaged locally as WOFF2 (with the original TTF retained). Arabic neon labels keep Palestine for correct Arabic glyph shaping.
-- Typewriter heading and blinking glowing cursor, with reduced-motion support.
-- Responsive mobile navigation, software badges, and soft blue portrait blending.
-- Two real, portrait 9:16 Vimeo projects. Players load only after a click, so opening the page does not download Vimeo players.
-- WhatsApp, Instagram and Facebook contact buttons.
+- Featured Collaborations section immediately below the hero, with a creator profile card, verified-status label, portrait sourced from the screenshot supplied by the portfolio owner, follower count shown as **3.9M**, bilingual project-vision copy, Instagram profile button and a 2-video next/previous switcher.
+- `Work` and `Explore My Work` (and their Arabic equivalents) scroll to `#featured`.
+- Selected Work now has All / Celebrities / Motion Graphics / Medical filters, and independent horizontally swipable carousels, scroll-snap, buttons and opacity fades on the edges.
+- About section's Premiere Pro, After Effects and DaVinci Resolve skill chips feature small matching app marks and a soft full-chip blue glow.
+- Five distinct Vimeo projects are listed. The two creator films are reused in the Featured section and the Celebrities category.
+- Vimeo embeds load only after the viewer presses Play, and other open players are removed automatically.
 
-## Video IDs
-- Haya: 1241990617
-- E.N.A.N.A Iraq: 1241984622
+## Vimeo videos
 
-## Contact links
-- WhatsApp: https://wa.me/201099181058
-- Instagram: https://www.instagram.com/vlaa_v21/
-- Facebook: https://www.facebook.com/3laaSHk
+| Project | Vimeo ID | Category | Aspect ratio |
+| --- | --- | --- | --- |
+| Aloosh Alameer 01 | 1242108707 | Celebrities | 9:16 |
+| Aloosh Alameer 02 | 1242108886 | Celebrities | 9:16 |
+| Real Estate Voiceover — Yemen | 1242111864 | Motion Graphics & Voiceover | 9:16 |
+| Medical Reel — Haya | 1241990617 | Medical | 9:16 |
+| Medical Reel — E.N.A.N.A Iraq | 1241984622 | Medical | 9:16 |
 
-## Notes
-- The two video cover cards are intentionally custom graphic covers, *not* claimed to be screenshots from the videos.
-- Online access is required to load the IBM Plex Sans / Press Start 2P web fonts and Vimeo videos. The Arabic Palestine font and portrait are included locally.
-- The three software marks by the portrait are minimalist stylized badges, not official supplied brand assets.
-- Avoid changing the Vimeo privacy settings in ways that block embedded playback on external domains.
+## Files
+
+- `index.html`: all markup, styling, translation strings and behavior (no build step)
+- `assets/portrait.webp`: original portfolio photo from V3
+- `assets/aloosh-profile.webp`: cropped profile photo from user-provided Instagram screenshot
+- `assets/fonts/Palestine-Regular.woff2` and `.ttf`: locally hosted Arabic font
+
+The English IBM Plex Sans and Press Start 2P fonts are loaded from Google Fonts and need internet access. Profile links and social/contact links are already configured.
+
+## Deployment to GitHub Pages
+
+1. Extract the ZIP.
+2. In the `3laa-Shelkamy-Portfolio` GitHub repository, replace the existing `index.html` and upload the `assets` folder contents, including the new Aloosh profile photo.
+3. Ensure `index.html` stays at the repository root and `assets/` is next to it, not nested in a second parent directory.
+4. Commit changes and hard-refresh the published GitHub Pages page after deployment.
+
+**Important:** This ZIP is a website source artifact; the actual GitHub site is not updated until you deploy it.
+
+## Editing projects later
+
+In `index.html`, project cards are in `#work` under `.project-group` sections. The carousel JavaScript works with arbitrary numbers of `.carousel-card` children. For new Vimeo projects, duplicate one `.work-card`, set its `.video-frame` `data-video-id` and `data-video-name`, update its poster/title, and adjust the `.carousel-count` total. No external backend is required.
+
+## Verification
+
+Checked page script syntax and browser interactions on 1440px desktop, 390px mobile and 320px compact mobile, in both Arabic and English. Tested category filtering, featured arrows, horizontal carousel navigation and disabled end arrows. No horizontal document overflow or JavaScript page errors in those checks. External Vimeo playback was not tested against Vimeo's live service during offline browser verification.
